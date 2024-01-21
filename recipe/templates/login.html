@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card p-4 shadow-lg" method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+            <hr></hr>
+            <div class="form-group">
+                <label >Username<span style="color: red;">*</span></label>
+                <input type="text" value="{{recipe.recipe_name}}" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+                <label>Password<span style="color: red;">*</span></label>
+                <input type="password" value="{{recipe.recipe_name}}" class="form-control" name="password" required>
+            </div>
+            <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+            <button type="submit" class="btn btn-dark">Log In</button>
+        </form>
+    </div>
+{% endblock %}
